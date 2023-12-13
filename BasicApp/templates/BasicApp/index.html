@@ -1,18 +1,66 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>DjangoApp</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url(''); /* Specify the path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1; /* Send the background image to the back */
+            animation: fadeIn 2s ease-in-out, scaleImage 5s infinite alternate; /* Add animations */
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px; /* Adjust the distance from the top */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; /* Bring the heading to the front */
+            color: black; /* Set text color */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleImage {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+    </style><br>
+
+    <title>Your Web Page</title>
 </head>
 <body>
-    <div class="typewriter">
-        <h1>Hello World! Welcome to the Django Application!</h1>
-    </div>
-    
-    <img src="{% static 'images/hello_world.png' %}" alt="Hello World">
+    <h1> Demo by Sunfire for .NEXT ON TOUR </h1>
 </body>
 </html>
